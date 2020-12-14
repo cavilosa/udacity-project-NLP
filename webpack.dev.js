@@ -9,16 +9,12 @@ module.exports = {
     mode: "production",
     entry: './src/client/index.js',
     devtool: 'inline-source-map',
-    devServer: {
-        contentBase: './dist',
-    },
     module: {
         rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
-            }
             },
             {
                 test: /\.scss$/,
