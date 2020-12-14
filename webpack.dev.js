@@ -6,6 +6,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     mode: "production",
     entry: './src/client/index.js',
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist',
+    },
     module: {
         rules: [
             {
@@ -17,7 +21,7 @@ module.exports = {
                 presets: ['@babel/preset-env']
                 }
             }
-        }
+            }
         ]
     },
     plugins: [
