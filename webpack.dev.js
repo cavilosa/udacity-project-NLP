@@ -9,7 +9,6 @@ module.exports = {
     mode: "production",
     entry: './src/client/index.js',
     devtool: 'inline-source-map',
-    stats: 'verbose',
     module: {
         rules: [
             {
