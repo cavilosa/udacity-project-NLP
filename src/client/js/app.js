@@ -1,14 +1,17 @@
+
+//document.addEventListener("click", handleSubmit);
+
 function handleSubmit(event) {
     event.preventDefault()
 
     let formText = document.getElementById('name').value
 
-    //console.log("::: Form Submitted :::")
+    console.log("::: Form Submitted :::")
 
     getAPI('http://localhost:8000/test')
     .then ( (apiKey) => {
         getURL(apiKey)
-        .then( (url) => {
+        .then(  (url) => {
                 getData(url)
                 .then( (data) => {
                     const results = `The irony of the text: ${data.irony}.
