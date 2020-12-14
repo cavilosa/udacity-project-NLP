@@ -25,6 +25,10 @@ const server = app.listen(port, function(){
     //console.log(textapi);
 });
 
+app.get("/", function(req, res){
+    res.sendFile("dist/index.html")
+})
+
 app.get("/test", function(req, res) {
     res.json(textapi);
 })
