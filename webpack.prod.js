@@ -16,7 +16,11 @@ module.exports = {
                 options: {
                 presets: ['@babel/preset-env']
                 }
+<<<<<<< HEAD
             }
+=======
+            }         
+>>>>>>> a864c97f40de7dc149635aba761930b0a6ea3e38
         }
         ]
     },
