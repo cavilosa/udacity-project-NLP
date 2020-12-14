@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://project/./src/client/index.js"],"names":["console","log"],"mappings":"mBAIAA,QAAQC,IAAI,wB","file":"main.js","sourcesContent":["import {handleSubmit} from \"./js/app.js\";\r\n\r\n//import \"styles/style.scss\";\r\n\r\nconsole.log(\"index.js is running\");\r\n\r\nexport {\r\n    handleSubmit\r\n}\r\n"],"sourceRoot":""}
