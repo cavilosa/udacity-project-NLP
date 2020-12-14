@@ -1,9 +1,9 @@
-function handleSubmit(event) {
+export function handleSubmit(event) {
     event.preventDefault()
 
     let formText = document.getElementById('name').value
 
-    //console.log("::: Form Submitted :::")
+    console.log("::: Form Submitted :::")
 
     getAPI('http://localhost:8000/test')
     .then ( (apiKey) => {
