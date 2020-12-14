@@ -16,7 +16,7 @@ const port = 8000;
 
 app.use(cors());
 
-app.use(express.static("website"));
+app.use(express.static("dist"));
 
 const data = ["The data from server side code"];
 
