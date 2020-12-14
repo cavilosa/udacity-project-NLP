@@ -4,19 +4,11 @@ var path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+    mode: "production",
     entry: './src/client/index.js',
-    mode: "development",
-    devtool: "source-map",
-    devServer: {
-        contentBase: './dist',
-    },
-    output: {
-        libraryTarget: "var",
-        filename: 'Client'
-     },
     module: {
         rules: [
-        {
+            {
             test: /\.m?js$/,
             exclude: /(node_modules|bower_components)/,
             use: {
@@ -25,15 +17,13 @@ module.exports = {
                 presets: ['@babel/preset-env']
                 }
             }
-        },
-        {
-            test: /\.scss$/,
-            use: [ 'style-loader', 'css-loader', 'sass-loader' ]
         }
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin(),
-        new CleanWebpackPlugin().
+        new HtmlWebpackPlugin({
+            template: "./src/client/views/index.html",
+            filename: "./index.html"
+        })
     ]
 };
