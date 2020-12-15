@@ -38,7 +38,7 @@ async function getData(url) {
 }
 
 
-async function getAPI (url) => {
+async function getAPI (url) {
     console.log(url);
     const response = await fetch(url);
     if (response.status > 300) {
