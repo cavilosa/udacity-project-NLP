@@ -1,19 +1,16 @@
-
-//document.addEventListener("click", handleSubmit);
-
-function handleSubmit(event) {
+export function handleSubmit(event) {
     event.preventDefault()
 
     let formText = document.getElementById('name').value
 
     console.log("::: Form Submitted :::")
 
-    getAPI('http://localhost:8000/test')
+    getAPI('http://localhost:8001/test')
     .then ( (apiKey) => {
         getURL(apiKey)
         .then(  (url) => {
-                getData(url)
-                .then( (data) => {
+            getData(url)
+            .then( (data) => {
                     const results = `The irony of the text: ${data.irony}.
                     The subjectivity of the text: ${data.subjectivity}.
                     The agreement between the sentiments detected in the text,
@@ -22,7 +19,6 @@ function handleSubmit(event) {
                 })
         } )
     })
-
 }
 
 
@@ -41,6 +37,7 @@ const getData = async (url) => {
     }
 }
 
+
 const getAPI = async (url) => {
     console.log(url);
     const response = await fetch(url);
@@ -57,6 +54,7 @@ const getAPI = async (url) => {
     }
 }
 
+
 const getURL = async (apiKey) => {
     console.log(apiKey);
     const text = document.getElementById('name').value;
@@ -67,3 +65,5 @@ const getURL = async (apiKey) => {
     console.log("url", url);
     return url;
 }
+
+export { handleSubmit }

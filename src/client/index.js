@@ -1,9 +1,16 @@
-import {handleSubmit} from "./js/app.js";
+import { handleSubmit } from "./js/app.js";
+//import { getAPI } from "./js/getAPI.js";
+//import { getURL } from "./js/app.js";
+//import { getData } from "./js/app.js";
 
-//import "./styles/style.scss";
+
+import "./styles/style.scss";
 
 console.log("index.js is running");
 
 export {
-    handleSubmit
+    handleSubmit,
+    //getAPI
+    //getURL,
+    //getData
 }

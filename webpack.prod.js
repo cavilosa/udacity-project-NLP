@@ -2,10 +2,20 @@ const webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: "production",
     entry: './src/client/index.js',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
+    optimization: {
+        minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    },
     module: {
         rules: [
             {
@@ -17,6 +27,10 @@ module.exports = {
                     presets: ['@babel/preset-env']
                          }
                  }
+            },
+            {
+            test: /\.scss$/,
+            use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             }
         ]
     },
@@ -33,6 +47,7 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
-        })
+        }),
+        new MiniCssExtractPlugin({ filename: "[name].css" })
     ]
 }
