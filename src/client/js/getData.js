@@ -1,5 +1,4 @@
-
-const getData = async (url) => {
+async function getData(url) {
     console.log("url", url);
     const response = await fetch(url);
     if (response.status > 300) {
@@ -13,3 +12,5 @@ const getData = async (url) => {
         console.log("error", error);
     }
 }
+
+export { getData }

@@ -22,7 +22,7 @@ export function handleSubmit(event) {
 }
 
 
-const getData = async (url) => {
+async function getData(url) {
     console.log("url", url);
     const response = await fetch(url);
     if (response.status > 300) {
@@ -38,7 +38,7 @@ const getData = async (url) => {
 }
 
 
-const getAPI = async (url) => {
+async function getAPI (url) => {
     console.log(url);
     const response = await fetch(url);
     if (response.status > 300) {
@@ -55,7 +55,7 @@ const getAPI = async (url) => {
 }
 
 
-const getURL = async (apiKey) => {
+async function getURL(apiKey) {
     console.log(apiKey);
     const text = document.getElementById('name').value;
     if (text === "") {
@@ -65,5 +65,3 @@ const getURL = async (apiKey) => {
     console.log("url", url);
     return url;
 }
-
-export { handleSubmit }

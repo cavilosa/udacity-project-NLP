@@ -12,6 +12,9 @@ module.exports = {
         libraryTarget: 'var',
         library: 'Client'
     },
+    devServer: {
+        contentBase: path.join(__dirname, 'public')
+    },
     devtool: 'inline-source-map',
     module: {
         rules: [

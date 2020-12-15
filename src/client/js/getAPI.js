@@ -1,4 +1,4 @@
-export const getAPI = async (url) => {
+async function getAPI (url) {
     console.log(url);
     const response = await fetch(url);
     if (response.status > 300) {
