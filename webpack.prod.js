@@ -9,19 +9,15 @@ module.exports = {
     module: {
         rules: [
             {
-            test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
+            test: /\.js$/,
+            exclude: /node_modules/,
             use: {
                 loader: 'babel-loader',
                 options: {
-                presets: ['@babel/preset-env']
-                }
-<<<<<<< HEAD
+                    presets: ['@babel/preset-env']
+                         }
+                 }
             }
-=======
-            }         
->>>>>>> a864c97f40de7dc149635aba761930b0a6ea3e38
-        }
         ]
     },
     plugins: [
@@ -30,13 +26,13 @@ module.exports = {
             filename: "./index.html"
         }),
         new CleanWebpackPlugin({
-                // Simulate the removal of files
-                dry: true,
-                // Write Logs to Console
-                verbose: true,
-                // Automatically remove all unused webpack assets on rebuild
-                cleanStaleWebpackAssets: true,
-                protectWebpackAssets: false
+            // Simulate the removal of files
+            dry: true,
+            // Write Logs to Console
+            verbose: true,
+            // Automatically remove all unused webpack assets on rebuild
+            cleanStaleWebpackAssets: true,
+            protectWebpackAssets: false
         })
     ]
-};
+}
