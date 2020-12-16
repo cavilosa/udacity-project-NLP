@@ -4,6 +4,8 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
+const textapi = process.env.API_KEY;
+
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
@@ -23,9 +25,8 @@ const server = app.listen(port, function(){
     console.log("server is runnig on port 8080");
 });
 
-app.get("/", sendApiKey);
+app.get("/key", sendApiKey)
 
 function sendApiKey(req, res) {
-    const textapi = process.env.API_KEY;
-    res.send(textapi);
-})
+    res.json(textapi);
+});

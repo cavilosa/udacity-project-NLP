@@ -1,14 +1,13 @@
 async function getAPI (url) {
-    console.log(url);
-    const response = await fetch(url);
+    const response = await fetch(`${url}`);
+
     if (response.status != 200) {
-        console.log(response.status, response.body)
+        console.log(response.status)
     }
     try {
-        const apiKey = response;
-        console.log(apiKey);
+        //console.log(response);
+        const apiKey = response.json();
         return apiKey;
-        //getURL(apiKey);
     }catch(error) {
         console.log("error", error);
     }
