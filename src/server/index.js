@@ -25,8 +25,8 @@ const server = app.listen(port, function(){
     console.log("server is runnig on port 8080");
 });
 
-app.get("/api", sendApiKey);
+app.get("/", sendApiKey)
 
 function sendApiKey(req, res) {
-    res.json(textapi);
+    res.json(textapi)
 }

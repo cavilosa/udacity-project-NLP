@@ -23,8 +23,6 @@ export function handleSubmit(event) {
     } else {
         alert("Fill in the form, please");
     }
-
-
 }
 
 /*

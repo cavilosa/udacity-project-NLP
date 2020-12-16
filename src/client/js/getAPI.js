@@ -6,7 +6,7 @@ async function getAPI (url) {
         console.log(response.status)
     }
     try {
-        const apiKey = response;
+        const apiKey = response.json();
         console.log(apiKey);
         return apiKey;
     }catch(error) {
