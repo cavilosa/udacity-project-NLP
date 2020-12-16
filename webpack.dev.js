@@ -16,6 +16,7 @@ module.exports = {
     devServer: {
        inline: false,
        contentBase: "./dist",
+       port: 8000
    },
     module: {
         rules: [

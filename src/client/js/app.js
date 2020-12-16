@@ -5,7 +5,7 @@ export function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
 
-    getAPI('http://localhost:8001/test')
+    getAPI("http://localhost:8000/test")
     .then ( (apiKey) => {
         getURL(apiKey)
         .then(  (url) => {
@@ -42,7 +42,7 @@ async function getAPI (url) {
     console.log(url);
     const response = await fetch(url);
     if (response.status > 300) {
-        console.log("res status > 300, problem")
+        console.log(response.status)
     }
     try {
         const apiKey = response.json();
