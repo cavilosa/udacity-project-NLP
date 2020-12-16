@@ -23,9 +23,11 @@ const server = app.listen(port, function(){
     console.log("server is runnig on port 8080");
 });
 
-app.get("/", sendApiKey);
+app.get("/geturl", postUrl);
 
-function sendApiKey(req, res) {
+function postUrl(req, res) {
     const textapi = process.env.API_KEY;
-    res.send(textapi);
+    const text = req.body;
+    const fullUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${textapi}&of=json&txt=${text}&lang=en`;
+    res.send(fullUrl);
 })

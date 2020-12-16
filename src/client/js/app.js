@@ -1,11 +1,12 @@
 export function handleSubmit(event) {
     event.preventDefault()
 
-    let formText = document.getElementById('name').value
-
     console.log("::: Form Submitted :::")
 
     if (document.getElementById('name').value != "") {
+
+    Client.postText()
+        /*
         Client.getAPI("/")
         .then ( (apiKey) => {
             Client.getURL(apiKey)
@@ -19,13 +20,34 @@ export function handleSubmit(event) {
                         document.querySelector("#results").innerText = results;
                     })
             } )
-        })
+        })*/
     } else {
         alert("Fill in the form, please");
     }
 
 
 }
+
+export async function postText(url="", data = {}) {
+    let formText = document.getElementById('name').value;
+    const response = await fetch("http:localhost:8080/geturl", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringufy(data)
+    });
+
+    try {
+        const text = await response.json();
+        console.log("text done");
+        return text;
+    } catch (error) {
+        console.log("error", error);
+    }
+};
+
 
 /*
 export async function getData(url) {
