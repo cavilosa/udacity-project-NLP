@@ -6,7 +6,7 @@ export function handleSubmit(event) {
     console.log("::: Form Submitted :::")
 
     if (document.getElementById('name').value != "") {
-        Client.getAPI("/key")
+        Client.getAPI("/")
         .then ( (apiKey) => {
             Client.getURL(apiKey)
             .then(  (url) => {

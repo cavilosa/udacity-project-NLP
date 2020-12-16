@@ -1,5 +1,5 @@
 async function getURL(apiKey) {
-    console.log(apiKey);
+    console.log("api key function is running");
     const text = document.getElementById('name').value;
     if (text === "") {
         alert("Fill in the text field");
