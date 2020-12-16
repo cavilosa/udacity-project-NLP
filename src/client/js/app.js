@@ -5,7 +5,7 @@ export function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
 
-    Client.getAPI("http://localhost:8000/test")
+    Client.getAPI("/")
     .then ( (apiKey) => {
         Client.getURL(apiKey)
         .then(  (url) => {
