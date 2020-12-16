@@ -4,10 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "jest",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack --config webpack.dev.js"
+    "build-dev": "webpack-dev-server --config webpack.dev.js --open"
   },
   "author": "Maryna K.",
   "license": "ISC",
@@ -16,7 +16,8 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -40,9 +41,8 @@
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.0.3",
-    "webpack": "^5.10.3",
+    "webpack": "^4.44.2",
     "webpack-bundle-analyzer": "^4.2.0",
-    "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0"
   }
 }

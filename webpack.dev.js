@@ -1,27 +1,28 @@
-const webpack = require("webpack");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebPackPlugin = require("html-webpack-plugin")
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 
 module.exports = {
-    mode: "production",
     entry: './src/client/index.js',
+    mode: 'development',
+    devtool: 'source-map',
     output: {
-        libraryTarget: 'var',
-        library: 'Client'
+        libraryTarget: "var",
+        library: "Client"
     },
     devServer: {
-        contentBase: path.join(__dirname, 'public')
-    },
-    devtool: 'inline-source-map',
+       inline: false,
+       contentBase: "./dist",
+   },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: '/\.js$/',
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: "babel-loader"
             },
             {
                 test: /\.scss$/,
@@ -30,19 +31,19 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
+        new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
-            filename: "./index.html"
+            filename: "./index.html",
         }),
         new CleanWebpackPlugin({
-                // Simulate the removal of files
-                dry: true,
-                // Write Logs to Console
-                verbose: true,
-                // Automatically remove all unused webpack assets on rebuild
-                cleanStaleWebpackAssets: true,
-                protectWebpackAssets: false
+            // Simulate the removal of files
+            dry: true,
+            // Write Logs to Console
+            verbose: true,
+            // Automatically remove all unused webpack assets on rebuild
+            cleanStaleWebpackAssets: true,
+            protectWebpackAssets: false
         }),
         new BundleAnalyzerPlugin()
     ]
-};
+}
