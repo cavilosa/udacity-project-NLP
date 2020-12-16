@@ -4,12 +4,12 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
-const textapi = process.env.API_KEY;
+//const textapi = process.env.API_KEY;
 
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -25,8 +25,10 @@ const server = app.listen(port, function(){
     console.log("server is runnig on port 8080");
 });
 
-app.get("/", sendApiKey)
+
+app.post("/", sendApiKey);
 
 function sendApiKey(req, res) {
-    res.json(textapi)
+    const textapi = process.env.API_KEY;
+    res.json(textapi);
 }
