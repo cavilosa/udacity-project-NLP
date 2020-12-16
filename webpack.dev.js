@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: './src/client/index.js',
@@ -43,7 +42,6 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         }),
-        new BundleAnalyzerPlugin(),
-        new Dotenv()
+        new BundleAnalyzerPlugin()
     ]
 }

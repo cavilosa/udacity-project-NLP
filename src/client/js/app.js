@@ -5,20 +5,26 @@ export function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
 
-    Client.getAPI("/")
-    .then ( (apiKey) => {
-        Client.getURL(apiKey)
-        .then(  (url) => {
-            Client.getData(url)
-            .then( (data) => {
-                    const results = `The irony of the text: ${data.irony}.
-                    The subjectivity of the text: ${data.subjectivity}.
-                    The agreement between the sentiments detected in the text,
-                    the sentence or the segment it refers to: ${data.agreement}.`
-                    document.querySelector("#results").innerText = results;
-                })
-        } )
-    })
+    if (document.getElementById('name').value != "") {
+        Client.getAPI("/")
+        .then ( (apiKey) => {
+            Client.getURL(apiKey)
+            .then(  (url) => {
+                Client.getData(url)
+                .then( (data) => {
+                        const results = `The irony of the text: ${data.irony}.
+                        The subjectivity of the text: ${data.subjectivity}.
+                        The agreement between the sentiments detected in the text,
+                        the sentence or the segment it refers to: ${data.agreement}.`
+                        document.querySelector("#results").innerText = results;
+                    })
+            } )
+        })
+    } else {
+        alert("Fill in the form, please");
+    }
+
+
 }
 
 /*

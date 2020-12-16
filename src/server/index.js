@@ -2,11 +2,7 @@ const express = require("express");
 const app = express();
 
 const dotenv = require('dotenv');
-dotenv.config({ debug: process.env.DEBUG });
-
-const Dotenv = require('dotenv-webpack');
-
-const textapi = process.env.API_KEY;
+dotenv.config();
 
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -21,12 +17,15 @@ app.get("/", function(req, res){
     res.sendFile("dist/index.html")
 });
 
-const port = 8000;
+const port = 8080;
 
 const server = app.listen(port, function(){
-    console.log("server is runnig on port 8000");
+    console.log("server is runnig on port 8080");
 });
 
-app.get("/", function(req, res) {
-    res.json(textapi);
-});
+app.get("/", sendApiKey);
+
+function sendApiKey(req, res) {
+    const textapi = process.env.API_KEY;
+    res.send(textapi);
+})
