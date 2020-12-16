@@ -5,11 +5,11 @@ export function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
 
-    getAPI("http://localhost:8000/test")
+    Client.getAPI("http://localhost:8000/test")
     .then ( (apiKey) => {
-        getURL(apiKey)
+        Client.getURL(apiKey)
         .then(  (url) => {
-            getData(url)
+            Client.getData(url)
             .then( (data) => {
                     const results = `The irony of the text: ${data.irony}.
                     The subjectivity of the text: ${data.subjectivity}.
@@ -21,8 +21,8 @@ export function handleSubmit(event) {
     })
 }
 
-
-async function getData(url) {
+/*
+export async function getData(url) {
     console.log("url", url);
     const response = await fetch(url);
     if (response.status > 300) {
@@ -55,7 +55,7 @@ async function getAPI (url) {
 }
 
 
-async function getURL(apiKey) {
+export async function getURL(apiKey) {
     console.log(apiKey);
     const text = document.getElementById('name').value;
     if (text === "") {
@@ -64,4 +64,4 @@ async function getURL(apiKey) {
     const url = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&of=json&txt=${text}&lang=en`;
     console.log("url", url);
     return url;
-}
+}*/

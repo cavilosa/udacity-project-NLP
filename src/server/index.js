@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config({ debug: process.env.DEBUG });
 
 var textapi = process.env.API_KEY;
 
@@ -23,8 +23,8 @@ const server = app.listen(port, function(){
 
 app.get("/", function(req, res){
     res.sendFile("dist/index.html")
-})
+});
 
-app.get("/test", function(req, res) {
+app.get("http://localhost:8000/test", function(req, res) {
     res.json(textapi);
-})
+});

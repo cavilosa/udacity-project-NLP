@@ -14,8 +14,6 @@ module.exports = {
         library: "Client"
     },
     devServer: {
-       inline: false,
-       contentBase: "./dist",
        port: 8000
    },
     module: {
