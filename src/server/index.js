@@ -1,17 +1,20 @@
 const express = require("express");
 const app = express();
 
+const fetch = require('node-fetch');
+
 const dotenv = require('dotenv');
 dotenv.config();
 
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-app.options('*', cors());
+//app.options('*', cors());
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.text());
 app.use(bodyParser.json());
-//app.use(cors());
+app.use(cors());
 
 app.use(express.static("dist"));
 const port = 8081;
@@ -32,14 +35,19 @@ app.post("/text", postText);
 
 async function postText(req, res) {
     const text = req.body;
-    console.log(text);
 
-    //const response = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${textapi}&of=json&txt=${text}&lang=en`);
-    //console.log("server side", response);
-    //const newData = {
-    //    irony: data.irony,
-    //    subjectivity: data.subjectivity,
-    //    agreement: data.agreement,
-    //}
-    //projectData = newData;
+    const response = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${textapi}&of=json&txt=${text}&lang=en`)
+        if (response.status != 200) {
+            window.alert("MEaningCLoud response is not going well");
+        }
+    const data = await response.json()
+    .then((data)=>{
+        const newData = {
+           irony: data.irony,
+           subjectivity: data.subjectivity,
+           agreement: data.agreement,
+        }
+        console.log(newData);
+    })
+
 }
