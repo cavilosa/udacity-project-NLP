@@ -11,16 +11,10 @@ export function handleSubmit(event) {
             Client.getURL(apiKey)
             .then(  (url) => {
                 Client.getData(url)
-                .then( (data) => {/*
-                    const results = `The irony of the text: ${data.irony}.
-The subjectivity of the text: ${data.subjectivity}.
-The agreement between the sentiments detected in the text,
-the sentence or the segment it refers to: ${data.agreement}.`
-document.querySelector("#results").innerText = results;*/
-
-                        document.querySelector(".irony"). innerText += data.irony;
-                        document.querySelector(".subjectivity"). innerText += data.subjectivity;
-                        document.querySelector(".agreement"). innerText += data.agreement;
+                .then( (data) => {
+                    document.querySelector(".irony"). innerText = data.irony;
+                    document.querySelector(".subjectivity"). innerText = data.subjectivity;
+                    document.querySelector(".agreement"). innerText = data.agreement;
                     })
             } )
         })
