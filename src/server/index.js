@@ -26,9 +26,10 @@ const server = app.listen(port, function(){
 });
 
 
-app.post("/", sendApiKey);
+app.get("/key", sendApiKey);
 
 function sendApiKey(req, res) {
     const textapi = process.env.API_KEY;
-    res.json(textapi);
+    console.log(textapi);
+    res.send(textapi);
 }

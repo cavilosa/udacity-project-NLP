@@ -3,10 +3,10 @@ async function getAPI (url) {
     const request = await fetch(`${url}`)
 
     if (request.status != 200) {
-        console.log(response.status)
+        console.log(request.status)
     }
     try {
-        const apiKey = request.json()
+        const apiKey = await request.json()
         console.log(apiKey)
         return apiKey;
     } catch(error) {
