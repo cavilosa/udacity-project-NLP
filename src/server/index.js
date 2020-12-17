@@ -7,9 +7,11 @@ dotenv.config();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+app.options('*', cors());
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(cors());
+//app.use(cors());
 
 app.use(express.static("dist"));
 const port = 8081;
@@ -28,7 +30,7 @@ const projectData = {};
 
 app.post("/text", postText);
 
-function postText(req, res) {
+async function postText(req, res) {
     const text = req.body;
     console.log(text);
     //const response = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${textapi}&of=json&txt=${text}&lang=en`);
