@@ -19,10 +19,10 @@ app.get("/", function(req, res){
     res.sendFile("dist/index.html")
 });
 
-const port = 8080;
+const port = 8081;
 
 const server = app.listen(port, function(){
-    console.log("server is runnig on port 8080");
+    console.log("server is runnig on port 8081");
 });
 
 
@@ -30,6 +30,5 @@ app.get("/key", sendApiKey);
 
 function sendApiKey(req, res) {
     const textapi = process.env.API_KEY;
-    console.log(textapi);
     res.send(textapi);
 }

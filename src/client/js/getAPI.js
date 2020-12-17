@@ -1,7 +1,8 @@
 async function getAPI (url) {
+   console.log(url)
 
-    const request = await fetch(`${url}`)
-
+    const request = await fetch(url)
+    console.log()
     if (request.status != 200) {
         console.log(request.status)
     }
