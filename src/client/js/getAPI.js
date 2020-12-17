@@ -1,23 +1,23 @@
-async function postText (url="", data={}) {
-
-
-    const response = await fetch(`http://localhost:8080${url}`, {
+async function postText (url, data) {
+    console.log(url, data)
+    const response = await fetch(url, {
         method: "POST",
         credentials: "same-origin",
-        mode: "cors",
+        mode: "no-cors",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
-    });
+    })
 
     try {
+        console.log("second stage")
         const newData = await response.json();
-        console.log(newData);
+        console.log("newData");
         return newData;
-    }catch(error) {
+    } catch(error) {
         console.log("error", error);
     }
-}
+};
 
 export { postText }

@@ -7,7 +7,7 @@ export function handleSubmit(event) {
 
     if (document.getElementById('name').value != "") {
 
-    Client.postText("/text", data)
+    Client.postText("http://localhost:8081/text", data)
     /*.then( (res) => {
         console.log("client side response", res);
     })*/
