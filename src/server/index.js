@@ -13,21 +13,21 @@ app.use(cors());
 
 app.use(express.static("dist"));
 
+const port = 8080;
+
 app.get("/", function(req, res){
     res.sendFile("dist/index.html")
 });
-
-const port = 8080;
 
 const server = app.listen(port, function(){
     console.log("server is runnig on port 8080");
 });
 
-app.get("/", postUrl);
+const article = "";
 
-function postUrl(req, res) {
-    const textapi = process.env.API_KEY;
+app.post("/text", postText);
+
+function postText(req, res) {
     const text = req.body;
-    const fullUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${textapi}&of=json&txt=${text}&lang=en`;
-    res.send(fullUrl);
-})
+    article = text;
+}

@@ -1,5 +1,5 @@
 import { handleSubmit } from "./js/app.js";
-import { getAPI } from "./js/getAPI.js";
+import { postText } from "./js/getAPI.js";
 import { getURL } from "./js/getURL.js";
 import { getData } from "./js/getData.js";
 
@@ -10,7 +10,7 @@ console.log("index.js is running");
 
 export {
     handleSubmit,
-    getAPI,
+    postText,
     getURL,
     getData
 }

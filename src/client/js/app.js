@@ -3,9 +3,11 @@ export function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
 
+    const data = document.getElementById('name').value;
+
     if (document.getElementById('name').value != "") {
 
-    Client.getURL()
+    Client.postText("/text", data)
         /*
         Client.getAPI("/")
         .then ( (apiKey) => {
@@ -24,31 +26,7 @@ export function handleSubmit(event) {
     } else {
         alert("Fill in the form, please");
     }
-
-
 }
-
-export async function postText(url="", data = {}) {
-    let formText = document.getElementById('name').value;
-    const response = await fetch("http:localhost:8080/geturl", {
-        method: "POST",
-        credentials: "same-origin",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringufy(data)
-    });
-
-    try {
-        const text = await response.json();
-        console.log("text done");
-        return text;
-    } catch (error) {
-        console.log("error", error);
-    }
-};
-
-
 /*
 export async function getData(url) {
     console.log("url", url);
