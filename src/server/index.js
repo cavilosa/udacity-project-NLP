@@ -30,5 +30,6 @@ app.get("/key", sendApiKey);
 
 function sendApiKey(req, res) {
     const textapi = process.env.API_KEY;
-    res.send(textapi);
+    console.log(textapi)
+    res.json(textapi);
 }
