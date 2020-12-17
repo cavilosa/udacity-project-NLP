@@ -23,7 +23,7 @@ const server = app.listen(port, function(){
     console.log("server is runnig on port 8080");
 });
 
-app.get("/geturl", postUrl);
+app.get("/", postUrl);
 
 function postUrl(req, res) {
     const textapi = process.env.API_KEY;

@@ -5,7 +5,7 @@ export function handleSubmit(event) {
 
     if (document.getElementById('name').value != "") {
 
-    Client.postText()
+    Client.getURL()
         /*
         Client.getAPI("/")
         .then ( (apiKey) => {

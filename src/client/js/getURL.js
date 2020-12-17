@@ -1,12 +1,17 @@
-async function getURL(apiKey) {
-    console.log(apiKey);
+async function getURL() {
+
     const text = document.getElementById('name').value;
+    console.log(text)
+
     if (text === "") {
         alert("Fill in the text field");
     }
-    const url = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&of=json&txt=${text}&lang=en`;
-    console.log("url", url);
-    return url;
+
+    const response = await fetch("/")
+
+    if (response.ok) {
+        return response.json();
+    }
 }
 
 export { getURL }
