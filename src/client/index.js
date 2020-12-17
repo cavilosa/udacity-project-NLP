@@ -1,7 +1,7 @@
 import { handleSubmit } from "./js/app.js";
 import { postText } from "./js/getAPI.js";
 import { getURL } from "./js/getURL.js";
-import { getData } from "./js/getData.js";
+import { updateUI } from "./js/getData.js";
 
 
 import "./styles/style.scss";
@@ -12,5 +12,5 @@ export {
     handleSubmit,
     postText,
     getURL,
-    getData
+    updateUI
 }

@@ -27,9 +27,9 @@ const server = app.listen(port, function(){
     console.log("server is runnig on port 8081");
 });
 
-var textapi = process.env.API_KEY;
+let textapi = process.env.API_KEY;
 
-const projectData = {};
+let projectData = {};
 
 app.post("/text", postText);
 
@@ -47,7 +47,14 @@ async function postText(req, res) {
            subjectivity: data.subjectivity,
            agreement: data.agreement,
         }
-        console.log(newData);
+        projectData = newData;
+        console.log(projectData);
     })
+}
 
+app.get("/data", updateUI);
+
+function updateUI (req, res) {
+    console.log("/data is running from server")
+    res.send(projectData)
 }

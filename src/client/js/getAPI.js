@@ -9,5 +9,4 @@ async function postText (url, data) {
     })
 }
 
-
 export { postText }
