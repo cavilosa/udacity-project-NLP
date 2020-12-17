@@ -1,28 +1,28 @@
 export function handleSubmit(event) {
     event.preventDefault()
 
-    console.log("::: Form Submitted :::")
+    let text = document.getElementById('name').value
 
-    const data = document.getElementById('name').value;
+    console.log("::: Form Submitted :::");
 
     if (document.getElementById('name').value != "") {
-
-    Client.postText("http://localhost:8081/text", data)
-    /*.then( (res) => {
-        console.log("client side response", res);
-    })*/
+        Client.postText("http://localhost:8081/text", text);
         /*
-        Client.getAPI("/")
+        Client.getAPI("http://localhost:8081/key", formText)
         .then ( (apiKey) => {
             Client.getURL(apiKey)
             .then(  (url) => {
                 Client.getData(url)
-                .then( (data) => {
-                        const results = `The irony of the text: ${data.irony}.
-                        The subjectivity of the text: ${data.subjectivity}.
-                        The agreement between the sentiments detected in the text,
-                        the sentence or the segment it refers to: ${data.agreement}.`
-                        document.querySelector("#results").innerText = results;
+                .then( (data) => {/*
+                    const results = `The irony of the text: ${data.irony}.
+The subjectivity of the text: ${data.subjectivity}.
+The agreement between the sentiments detected in the text,
+the sentence or the segment it refers to: ${data.agreement}.`
+document.querySelector("#results").innerText = results;*/
+
+                        /*document.querySelector(".irony"). innerText += data.irony;
+                        document.querySelector(".subjectivity"). innerText += data.subjectivity;
+                        document.querySelector(".agreement"). innerText += data.agreement;
                     })
             } )
         })*/
@@ -30,6 +30,7 @@ export function handleSubmit(event) {
         alert("Fill in the form, please");
     }
 }
+
 /*
 export async function getData(url) {
     console.log("url", url);

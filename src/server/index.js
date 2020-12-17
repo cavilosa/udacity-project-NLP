@@ -33,6 +33,7 @@ app.post("/text", postText);
 async function postText(req, res) {
     const text = req.body;
     console.log(text);
+
     //const response = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${textapi}&of=json&txt=${text}&lang=en`);
     //console.log("server side", response);
     //const newData = {

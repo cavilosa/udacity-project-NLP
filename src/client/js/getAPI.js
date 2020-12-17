@@ -1,5 +1,4 @@
 async function postText (url, data) {
-    console.log(url, data)
     const response = await fetch(url, {
         method: "POST",
         mode: "no-cors",
@@ -7,16 +6,15 @@ async function postText (url, data) {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
-    })
-
+    })/*
     try {
         console.log("second stage")
         const newData = await response.json();
-        //console.log("newData");
+        console.log("newData");
         return newData;
     } catch(error) {
         console.log("error", error);
-    }
+    }*/
 }
 
 
