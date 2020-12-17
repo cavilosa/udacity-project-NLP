@@ -8,6 +8,9 @@ export function handleSubmit(event) {
     if (document.getElementById('name').value != "") {
 
     Client.postText("/text", data)
+    /*.then( (res) => {
+        console.log("client side response", res);
+    })*/
         /*
         Client.getAPI("/")
         .then ( (apiKey) => {

@@ -12,7 +12,6 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use(express.static("dist"));
-
 const port = 8080;
 
 app.get("/", function(req, res){
@@ -23,11 +22,20 @@ const server = app.listen(port, function(){
     console.log("server is runnig on port 8080");
 });
 
-const article = "";
+var textapi = process.env.API_KEY;
+console.log("apikey", textapi);
+
 
 app.post("/text", postText);
 
-function postText(req, res) {
+async function postText(req, res) {
     const text = req.body;
-    article = text;
+    const response = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${textapi}&of=json&txt=${text}&lang=en`);
+    console.log("server side", data);
+    const projectData = {
+        irony: data.irony,
+        subjectivity: data.subjectivity,
+        agreement: data.agreement,
+    }
+    res.send(projectData);
 }

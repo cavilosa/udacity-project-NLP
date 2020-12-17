@@ -1,14 +1,14 @@
 async function postText (url="", data={}) {
 
-    //const data = document.getElementById('name').value;
 
     const response = await fetch(`http://localhost:8080${url}`, {
         method: "POST",
         credentials: "same-origin",
+        mode: "cors",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
     });
 
     try {
