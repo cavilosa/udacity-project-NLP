@@ -31,6 +31,7 @@ let textapi = process.env.API_KEY;
 
 let projectData = {};
 
+
 app.post("/text", postText);
 
 async function postText(req, res) {
