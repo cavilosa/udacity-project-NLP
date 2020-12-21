@@ -29,39 +29,36 @@ const server = app.listen(port, function(){
 
 let textapi = process.env.API_KEY;
 
-let projectData = [];
-
-
 app.post("/text", postText);
 
 async function postText(req, res) {
+    projectData = [];
     const text = req.body;
 
     const response = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${textapi}&of=json&txt=${text}&lang=en`)
         if (response.status != 200) {
-            window.alert("MeaningCLoud response is not going well");
+            window.alert("MEaningCLoud response is not going well");
         }
     const data = await response.json()
-    console.log("data", data)
-
-    .then( (data) => {
+    .then((data)=>{
+        console.log("doint newdata")
         const newData = {
            irony: data.irony,
            subjectivity: data.subjectivity,
            agreement: data.agreement,
         }
-        return projectData.push(newData);
+        projectData = newData;
+        console.log("project data", projectData);
     })
+    app.get("/data", async function updateUI (req, res) {
+    console.log("data is running from server")
+    res.send(projectData)
+     })
 
-    .then ( (projectData) => {
-        console.log(projectData)
-        res.send(projectData);
 
-    })
 }
-/*app.get("/data", updateUI);
-
-function updateUI (req, res) {
-    console.log("project data", projectData)
+/*
+async function updateUI (req, res) {
+    console.log("data is running from server")
     res.send(projectData)
 }*/

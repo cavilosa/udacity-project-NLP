@@ -8,18 +8,7 @@ async function postText (url, data) {
         },
         body: JSON.stringify(data)
     })
-    .then( async function (url) {
-        const request = await fetch (url);
-        try {
-                const data = await request.json();
-                console.log("data", data);
-                document.querySelector(".irony"). innerText = data.irony;
-                document.querySelector(".subjectivity"). innerText = data.subjectivity;
-                document.querySelector(".agreement"). innerText = data.agreement;
-        } catch (error) {
-                console.log("error", error)
-        }
-    });
+    //res.send(projectData).then (Client.updateUI("http://localhost:8081/data"));
 }
 
 export { postText }

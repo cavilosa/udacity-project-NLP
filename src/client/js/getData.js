@@ -5,10 +5,13 @@ async function updateUI (url) {
         console.log()
         try {
             const data = await request.json();
-            console.log("data", data);
-            document.querySelector(".irony"). innerText = data.irony;
-            document.querySelector(".subjectivity"). innerText = data.subjectivity;
-            document.querySelector(".agreement"). innerText = data.agreement;
+            if (data.length != 0) {
+                document.querySelector(".irony"). innerText = data.irony;
+                document.querySelector(".subjectivity"). innerText = data.subjectivity;
+                document.querySelector(".agreement"). innerText = data.agreement;
+            } else {
+                console.log("data.length === 0")
+            }
         } catch (error) {
             console.log("error", error)
         }
