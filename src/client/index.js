@@ -10,6 +10,7 @@ logo.src = logoIcon;
 var gear = document.querySelector("#gear");
 gear.src = gearIcon;
 
+
 import "./styles/style.scss";
 
 export {
