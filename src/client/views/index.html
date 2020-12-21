@@ -13,7 +13,7 @@
                 <!--<img src={logo} alt="LOGO" /> -->
                 <img id="logo" alt="LOGO IMAGE" height:"75px" width="75px" />
             </div>
-            
+
             <div class="navigation">
                 <img id="gear" alt="GEAR IMAGE" />
             </div>
@@ -22,8 +22,11 @@
         <main>
             <section>
                 <form class="form" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Text">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <textarea id="name" type="text" name="input" value=""
+                        placeholder="Text"></textarea>
+                    <input type="submit" id="submit" name="" value="SUBMIT"
+                        onclick="return Client.handleSubmit(event)"
+                        onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
 
@@ -36,8 +39,8 @@
                     <p>The subjectivity of the text:</p>
                     <div class="subjectivity">
                     </div>
-                    <p>The agreement between the sentiments detected in the text,
-                    the sentence or the segment it refers to:</p>
+                    <p>The agreement between the sentiments detected in the
+                        text, the sentence or the segment it refers to:</p>
                     <div class="agreement">
                     </div>
                 </div>
@@ -45,7 +48,10 @@
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <p>The project was created using this
+                <a href="https://www.meaningcloud.com/"> API</a> from
+                    Meaning Cloud
+            </p>
         </footer>
 
     </body>

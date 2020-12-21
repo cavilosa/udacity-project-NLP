@@ -4,21 +4,6 @@ body {
     min-height: 100vh;
     max-width: 100vh;
     text-align: center;
-    background-color: green;
     font-size: 20px;
-}
-
-main {
-    flex: 2;
-}
-
-section {
-    max-width: 800px;
-    margin: 50px auto;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
+    background-image: url("./../images/background.png");
 }

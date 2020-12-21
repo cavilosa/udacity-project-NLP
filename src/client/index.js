@@ -12,6 +12,10 @@ gear.src = gearIcon;
 
 
 import "./styles/style.scss";
+import "./styles/form.scss";
+import "./styles/header.scss";
+import "./styles/main.scss";
+import "./styles/footer.scss";
 
 export {
     handleSubmit,
