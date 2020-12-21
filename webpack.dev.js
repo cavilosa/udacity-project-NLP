@@ -22,7 +22,7 @@ module.exports = {
                 use: [
                    {
                     loader: 'file-loader',
-                    },
+                    }
                 ],
             },
             {
@@ -33,7 +33,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [ 'style-loader', 'css-loader', 'sass-loader' ]
-            }/*,
+            },
             {
                 test: /\.(png|jp(e*)g|svg)$/i,
                 use: [{
@@ -43,7 +43,7 @@ module.exports = {
                         name: 'images/[hash]-[name].[ext]'
                     }
                 }]
-            }*/
+            }
         ]
     },
     plugins: [

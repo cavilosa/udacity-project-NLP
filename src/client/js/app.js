@@ -1,4 +1,4 @@
-export function handleSubmit(event) {
+export async function handleSubmit(event) {
     event.preventDefault()
 
     let text = document.getElementById('name').value
@@ -7,7 +7,8 @@ export function handleSubmit(event) {
 
     if (document.getElementById('name').value != "") {
         Client.postText("http://localhost:8081/text", text)
-        .then ( Client.updateUI("http://localhost:8081/data") );
+        //.then( (data) => console.log(data))
+        //.then( Client.updateUI("http://localhost:8081/data"));
     } else {
         alert("Fill in the form, please");
     }
