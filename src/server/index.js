@@ -54,5 +54,5 @@ async function updateUI (req, res) {
         }
     const data = await response.json()
     console.log(data);
-    res.send(data);    
+    res.send(data);
 }
