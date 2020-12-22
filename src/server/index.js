@@ -33,7 +33,6 @@ let text =""; // A sting to fill in with the user input info
 app.post("/text", postText);
 
 async function postText(req, res) {
-    projectData = []; // Cleans the data every new call
     const input = req.body; // User input from client side
     return text = input; // Assign new value to global variable
 }
