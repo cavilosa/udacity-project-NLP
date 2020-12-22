@@ -8,12 +8,13 @@ export async function handleSubmit(event) {
     console.log("::: Form Submitted :::");
 
     if (regex.test(text)) {
-        postText("http://localhost:8081/text", text)
+        Client.postText("http://localhost:8081/text", text)
         .then( Client.updateUI() );
     } else {
         alert("Fill in the valid input, please!");
     }
 }
+
 
 async function postText (url, data) {
     console.log("post text is ran")
@@ -21,7 +22,7 @@ async function postText (url, data) {
         method: "POST",
         mode: "no-cors",
         headers: {
-            "Content-Type": "text/plain"
+            "Content-Type": "application/json; charset=utf-8",
         },
         body: JSON.stringify(data)
     })
