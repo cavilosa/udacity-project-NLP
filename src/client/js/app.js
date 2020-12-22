@@ -9,7 +9,7 @@ export async function handleSubmit(event) {
 
     if (regex.test(text)) {
         Client.postText("http://localhost:8081/text", text)
-        .then( Client.updateUI() );
+        .then( Client.updateUI("http://localhost:8081/data") );
     } else {
         alert("Fill in the valid input, please!");
     }

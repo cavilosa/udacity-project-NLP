@@ -1,6 +1,6 @@
-async function updateUI () {
+async function updateUI (url) {
     console.log("update UI is running")
-    const request = await fetch ("http://localhost:8081/data");
+    const request = await fetch (url);
     try {
         const data = await request.json();
         console.log(data)
