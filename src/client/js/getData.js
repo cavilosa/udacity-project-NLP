@@ -1,10 +1,9 @@
 async function updateUI (url) {
-    console.log("update UI is running")
-    const request = await fetch (url);
+    const request = await fetch (url); // Retreiving server side data form API call
     try {
         const data = await request.json();
-        console.log(data)
-        if (data.length != 0) {
+
+        if (data.length != 0) { // Conat data contains all info from MeaningCloud
                 document.querySelector(".irony"). innerText = data.irony;
                 document.querySelector(".subjectivity"). innerText = data.subjectivity;
                 document.querySelector(".agreement"). innerText = data.agreement;

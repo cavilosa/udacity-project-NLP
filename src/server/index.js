@@ -9,8 +9,6 @@ dotenv.config();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-//app.options('*', cors());
-
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.text());
 app.use(bodyParser.json());
@@ -29,30 +27,26 @@ const server = app.listen(port, function(){
 
 let textapi = process.env.API_KEY;
 
-projectData = {};
 
-let text ="";
+let text =""; // A sting to fill in with the user input info
 
 app.post("/text", postText);
 
 async function postText(req, res) {
-    projectData = [];
-    console.log("project data at start", projectData)
-    const input = req.body;
-    console.log("text from posttext", input);
-    return text = input;
+    projectData = []; // Cleans the data every new call
+    const input = req.body; // User input from client side
+    return text = input; // Assign new value to global variable
 }
 
 
 app.get("/data", updateUI);
 
 async function updateUI (req, res) {
-    console.log("updated text", text)
+    // API url
     const response = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${textapi}&of=json&txt=${text}&lang=en`)
         if (response.status != 200) {
             window.alert("MeaningCLoud response is not going well");
         }
-    const data = await response.json()
-    console.log(data);
-    res.send(data);
+    const data = await response.json(); // API call response with sentimental analysis
+    res.send(data); // Sending received data to client side
 }
