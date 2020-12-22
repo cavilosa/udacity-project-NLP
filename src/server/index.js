@@ -38,6 +38,10 @@ async function postText(req, res) {
     return text = input; // Assign new value to global variable
 }
 
+app.get('/user', function(req, res) {
+  res.status(200).json({ name: 'john' });
+});
+
 
 app.get("/data", updateUI);
 
