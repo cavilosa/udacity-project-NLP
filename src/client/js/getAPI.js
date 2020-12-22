@@ -8,7 +8,7 @@ async function postText (url, data) {
         },
         body: JSON.stringify(data)
     })
-    //res.send(projectData).then (Client.updateUI("http://localhost:8081/data"));
 }
+
 
 export { postText }

@@ -7,7 +7,7 @@ export async function handleSubmit(event) {
 
     if (document.getElementById('name').value != "") {
         Client.postText("http://localhost:8081/text", text)
-        .then(  Client.updateUI("http://localhost:8081/data") );
+        .then( Client.updateUI() );
     } else {
         alert("Fill in the form, please");
     }
