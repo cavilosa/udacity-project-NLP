@@ -1,1 +1,60 @@
-<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><title>Test</title><link rel="shortcut icon" href="#"><link href="main.css" rel="stylesheet"></head><body><header><div class="">Logo</div><div class="">navigation</div></header><main><section><form class="" onsubmit="return Client.handleSubmit(event)"><input id="name" name="input" value="" placeholder="Text"> <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)"></form><section><section><strong>Form Results:</strong><div id="results"><div class="irony">The irony of the text:</div><div class="subjectivity">The subjectivity of the text:</div><div class="agreement">The agreement between the sentiments detected in the text, the sentence or the segment it refers to:</div></div></section></section></section></main><footer><p>This is a footer</p></footer><script src="main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <link rel="shortcut icon" href="../images/logo.jpg">
+    <link href="main.css" rel="stylesheet"></head>
+
+    <body>
+
+        <header>
+            <div class="logo">
+                <!--<img src={logo} alt="LOGO" />
+
+            <img id="gear" alt="GEAR IMAGE" height="100px" width="100px" />-->
+                <img id="logo" alt="LOGO IMAGE" height:"75px" width="75px" />
+            </div>
+
+            <div class="navigation">
+
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form class="form" onsubmit="return Client.handleSubmit(event)">
+                    <textarea id="name" type="text" name="input" value=""
+                        placeholder="Text" rows="7" cols="50"></textarea>
+                    <input type="submit" id="submit" name="" value="SUBMIT"
+                        onclick="return Client.handleSubmit(event)"
+                        onsubmit="return Client.handleSubmit(event)">
+                </form>
+            <section>
+
+            <section>
+                <strong>Form Results:</strong>
+                <div id="results">
+                    <p>The irony of the text:</p>
+                    <div class="irony">
+                    </div>
+                    <p>The subjectivity of the text:</p>
+                    <div class="subjectivity">
+                    </div>
+                    <p>The agreement between the sentiments detected in the
+                        text, the sentence or the segment it refers to:</p>
+                    <div class="agreement">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>The project was created using this
+                <a href="https://www.meaningcloud.com/"> API</a> from
+                    Meaning Cloud
+            </p>
+        </footer>
+
+    <script src="main.js"></script></body>
+</html>

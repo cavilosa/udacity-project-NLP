@@ -46,7 +46,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/client/views/index.html",
-            filename: "./index.html"
+            filename: "./index.html",
+            minify: false
         }),
         new CleanWebpackPlugin({
             // Simulate the removal of files
