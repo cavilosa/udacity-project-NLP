@@ -1,5 +1,5 @@
 import { handleSubmit } from "./js/app.js";
-import { postText } from "./js/getAPI.js";
+import { postText } from "./js/app.js";
 import { updateUI } from "./js/getData.js";
 import logoIcon from "./images/logo.jpg";
 
