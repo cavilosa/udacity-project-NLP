@@ -5,8 +5,4 @@ describe("handleSubmit", () => {
     test("call the postText function", ()=>{
         expect(postText()).toBeDefined;
     });
-
-    test("", ()=>{
-
-    })
 });

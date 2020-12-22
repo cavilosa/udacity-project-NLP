@@ -4,4 +4,5 @@ describe("update UI", () => {
     test("call the update UI function", ()=>{
         expect(updateUI()).toBeDefined;
     });
+
 });
