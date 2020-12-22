@@ -33,7 +33,7 @@ let text =""; // A sting to fill in with the user input info
 app.post("/text", postText);
 
 async function postText(req, res) {
-    projectData = []; // Cleans the data every new call
+    const projectData = []; // Cleans the data every new call
     const input = req.body; // User input from client side
     return text = input; // Assign new value to global variable
 }
@@ -50,3 +50,5 @@ async function updateUI (req, res) {
     const data = await response.json(); // API call response with sentimental analysis
     res.send(data); // Sending received data to client side
 }
+
+module.exports = app;
