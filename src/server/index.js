@@ -50,3 +50,5 @@ async function updateUI (req, res) {
     const data = await response.json(); // API call response with sentimental analysis
     res.send(data); // Sending received data to client side
 }
+
+module.exports = server;
