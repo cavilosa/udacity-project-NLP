@@ -12,7 +12,6 @@ export async function handleSubmit(event) {
         Client.postText("http://localhost:8081/text", text)
         // Updating UI with data received from the API call
         .then( Client.updateUI("http://localhost:8081/data") );
-
     } else {
         alert("Fill in the valid input, please!");
     }
@@ -25,11 +24,10 @@ async function postText (url, data) {
         method: "POST",
         mode: "no-cors",
         headers: {
-            "Content-Type": "application/json; charset=utf-8"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
     })
-    console.log("post text end")
 }
 
 export { postText }

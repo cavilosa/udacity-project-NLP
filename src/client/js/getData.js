@@ -5,9 +5,9 @@ async function updateUI (url) {
         const data = await request.json();
 
         if (data.length != 0) { // Conat data contains all info from MeaningCloud
-                document.querySelector(".irony"). innerText = data.irony;
-                document.querySelector(".subjectivity"). innerText = data.subjectivity;
-                document.querySelector(".agreement"). innerText = data.agreement;
+            document.querySelector(".irony"). innerText = data.irony;
+            document.querySelector(".subjectivity"). innerText = data.subjectivity;
+            document.querySelector(".agreement"). innerText = data.agreement;
         } else {
                 console.log("data.length === 0")
         }
