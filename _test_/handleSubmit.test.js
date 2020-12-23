@@ -6,7 +6,7 @@ describe("handleSubmit", () => {
         expect(postText()).toBeDefined;
     });
 
-    test("", ()=>{
-
-    })
+    test("not to be null", () => {
+        expect(postText()).not.toBeNull();
+    });
 });
