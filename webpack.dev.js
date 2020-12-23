@@ -4,6 +4,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+
 module.exports = {
     entry: './src/client/index.js',
     mode: 'development',
@@ -12,9 +13,6 @@ module.exports = {
         libraryTarget: "var",
         library: "Client"
     },
-    /*devServer: {
-       port: 8000
-   },*/
     module: {
         rules: [
             {
@@ -34,17 +32,6 @@ module.exports = {
                 test: /\.scss$/,
                 use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             },
-            /*
-            {
-                test: /\.(png|jp(e*)g|svg)$/i,
-                use: [{
-                    loader: 'url-loader',
-                    options: {
-                        limit: 8000, // Convert images < 8kb to base64 strings
-                        name: 'images/[hash]-[name].[ext]'
-                    }
-                }]
-            },*/
             {
               test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
               use: [

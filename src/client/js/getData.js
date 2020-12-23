@@ -1,4 +1,5 @@
 async function updateUI (url) {
+    console.log("uodate UI is on")
     const request = await fetch (url); // Retreiving server side data form API call
     try {
         const data = await request.json();

@@ -19,6 +19,8 @@
     "node-fetch": "^2.6.1",
     "regenerator-runtime": "^0.13.7",
     "webpack-cli": "^3.3.12",
+    "workbox-precaching": "^6.0.2",
+    "workbox-routing": "^6.0.2",
     "workbox-webpack-plugin": "^6.0.2"
   },
   "devDependencies": {

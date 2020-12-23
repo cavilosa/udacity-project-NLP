@@ -3,14 +3,13 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
-        <link rel="shortcut icon" href="../images/logo.jpg">
+    <!--    <link rel="shortcut icon" href="../images/logo.jpg"> -->
     </head>
 
     <body>
-
         <header>
             <div class="logo">
-                <img id="logo" alt="LOGO IMAGE" src="logoIcon" />
+                <img id="logo" alt="LOGO IMAGE" />
             </div>
         </header>
 
@@ -27,7 +26,7 @@
             </section>
 
             <section class="results">
-                <h2><strong>Form Results:</strong></h2> 
+                <h2><strong>Form Results:</strong></h2>
                 <div id="results">
                     <p>The irony of the text:</p>
                     <div class="irony">
@@ -45,7 +44,7 @@
 
         <footer>
             <p>The project was created using this
-                <a href="https://www.meaningcloud.com/"> API</a> from
+                <a href="https://www.meaningcloud.com/">API</a> from
                     Meaning Cloud
             </p>
         </footer>
@@ -55,7 +54,7 @@
             if ('serviceWorker' in navigator) {
             // Use the window load event to keep the page load performant
                 window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js');
+                    navigator.serviceWorker.register('./service-worker.js');
             });
         }
         </script>
