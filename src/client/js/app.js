@@ -23,9 +23,10 @@ async function postText (url, data) {
     console.log("post text is ran")
     const response = await fetch(url, {
         method: "POST",
-        mode: "no-cors",
+        mode: "cors",
         headers: {
-            "Content-Type": "application/json; charset=utf-8",
+            "Content-Type": "application/json",
+            //; charset=utf-8
         },
         body: JSON.stringify(data)
     })
