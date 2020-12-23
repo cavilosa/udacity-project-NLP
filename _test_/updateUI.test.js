@@ -5,4 +5,8 @@ describe("update UI", () => {
         expect(updateUI()).toBeDefined;
     });
 
+    test("not to be null", () => {
+        expect(updateUI()).not.toBeNull();
+    });
+
 });

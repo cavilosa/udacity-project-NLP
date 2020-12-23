@@ -1,4 +1,4 @@
-const request = require("supertest");
+/*const request = require("supertest");
 const app = require("../src/server/index.js");
 
 app.get('/user', function(req, res) {
@@ -15,4 +15,4 @@ test("",  (done) => {
       .end(function(err, res) {
         if (err) throw err;
       });
-})
+})*/
