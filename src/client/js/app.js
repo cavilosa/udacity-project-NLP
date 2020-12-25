@@ -19,15 +19,22 @@ export async function handleSubmit(event) {
 
 // Posting user input to server side code
 async function postText (url, data) {
-    console.log("post text is ran")
+    console.log("post text is ran", url, data)
     const request = await fetch(url, {
         method: "POST",
         mode: "no-cors",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json; charset=utf-8"
         },
         body: JSON.stringify(data)
     })
+    try {
+        console.log(request)
+        const data = await request.json();
+        return data
+    }catch(error){
+        console.log(error)
+    }
 }
 
 
