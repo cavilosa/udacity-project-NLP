@@ -21,6 +21,15 @@ describe ("test the api rout", () => {
             .expect(200)
             .expect("Content-Type", /json/)
             done();
-        expect(req.body).toHaveProperty("post")
+        expect(req.body).toHaveProperty("status")
+    });
+
+    test("GET method test", async (done) => {
+        const res = await request(app)
+            .get("/text")
+            .expect("Content-Type", /text/)
+            done();
+        expect(res.body).not.toHaveProperty("post")
+        expect(res.body.length).toBeGreaterThen(1)
     });
 });
