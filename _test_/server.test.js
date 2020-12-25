@@ -1,21 +1,26 @@
 const fetch = require("node-fetch");
-//jest.setTimeout(30000);
-const request = require('supertest')
+const request = require('supertest');
+const app = require("../src/server/index");
 
-//const express = require("express")
-const app = require("../src/server/index")
-
-
+/*
 describe ("test server route", () => {
-    test("GET method test", async () => {
+    test("GET method test", async (done) => {
         const res = await request(app)
             .get("/text")
-            //.expect("Content-Type", /application\/json/);
-            //.expect(404);
-            .expect('Content-Type', /text/)
-            //.expect(200)
-            //done();
-        //expect(res.statusCode).toBe(201)
-        //expect(res.body).toHaveProperty("post")
+            .expect("Content-Type", /text/)
+            done();
+        expect(res.body).not.toHaveProperty("post")
+        expect(res.body.length).toBeGreaterThen(1)
+    });
+});*/
+
+describe ("test the api rout", () => {
+    test("get testing", async (done) => {
+        const req = await request(app)
+            .get("/data")
+            .expect(200)
+            .expect("Content-Type", /json/)
+            done();
+        expect(req.body).toHaveProperty("post")
     });
 });

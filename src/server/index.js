@@ -35,6 +35,7 @@ app.post("/text", postText);
 async function postText(req, res) {
     console.log("text received")
     const input = req.body; // User input from client side
+    console.log(input)
     return text = input; // Assign new value to global variable
 }
 
