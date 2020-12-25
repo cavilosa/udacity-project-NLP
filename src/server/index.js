@@ -48,6 +48,7 @@ async function updateUI (req, res) {
             window.alert("MeaningCLoud response is not going well");
         }
     const data = await response.json(); // API call response with sentimental analysis
+    console.log(typeof data)// API call response with sentimental analysis
     res.send(data); // Sending received data to client side
 }
 
