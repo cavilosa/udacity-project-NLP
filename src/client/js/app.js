@@ -22,11 +22,11 @@ async function postText (url, data) {
     console.log("post text is ran", url, data)
     const request = await fetch(url, {
         method: "POST",
-        mode: "no-cors",
+        mode: "cors",
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify({input:data})
     })
     try {
         console.log(request)
