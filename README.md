@@ -14,3 +14,6 @@ The project is aimed at creating a tool for analyzing texts with MeaningCloud AP
 * Service workers
 * Using APIs and creating requests to external URLs
 * Unit Testing using Jest Framework
+
+## Great addition would be deploying the app using
+<a href="https://www.netlify.com/">Netlify</a> or <a href="https://dashboard.heroku.com/apps">Heroku</a>.
