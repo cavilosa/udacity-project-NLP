@@ -6,6 +6,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 /*const WorkboxPlugin = require('workbox-webpack-plugin')*/
 
 
+
 module.exports = {
     entry: './src/client/index.js',
     mode: 'development',
@@ -66,5 +67,6 @@ module.exports = {
         }),
         new BundleAnalyzerPlugin(),
         /*new WorkboxPlugin.GenerateSW()*/
+        new webpack.EnvironmentPlugin(['NODE_ENV']);
     ]
 }
