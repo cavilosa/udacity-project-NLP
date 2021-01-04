@@ -55,12 +55,12 @@ app.get("/data", updateUI);
 async function updateUI (req, res) {
     // API url
     console.log(text)
-    const response = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${textapi}&of=json&txt=${text}&lang=en`)
+    const response = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${textapi}&lang=en&txt=plain&url=${text}&model=general`)
         if (response.status != 200) {
             window.alert("MeaningCLoud response is not going well");
         }
     const data = await response.json(); // API call response with sentimental analysis
-    console.log(typeof data)// API call response with sentimental analysis
+    console.log(typeof data, data)// API call response with sentimental analysis
     res.send(data); // Sending received data to client side
 }
 
