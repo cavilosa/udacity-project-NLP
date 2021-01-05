@@ -11,7 +11,7 @@ const cors = require("cors");
 app.use(cors());
 
 app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:9000'); // dev mode port
+    res.header('Access-Control-Allow-Origin', '*'); //
     res.header('Access-Control-Allow-Credentials', 'true');
     next();
 });
