@@ -67,6 +67,5 @@ module.exports = {
         }),
         new BundleAnalyzerPlugin(),
         /*new WorkboxPlugin.GenerateSW()*/
-        new webpack.EnvironmentPlugin(['NODE_ENV']);
     ]
 }

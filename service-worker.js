@@ -8,10 +8,18 @@ precacheAndRoute(self.__WB_MANIFEST);
 
 // Catch routing errors, like if the user is offline
 setCatchHandler(async ({ event }) => {
+    if (process.env.NODE_ENV === "production") {
+        // Return the precached offline page if a document is being requested
+        if (event.request.destination === 'document') {
+          return matchPrecache('/offline.html');
+        }
+
+        return Response.error();
+    }/*
   // Return the precached offline page if a document is being requested
   if (event.request.destination === 'document') {
     return matchPrecache('/offline.html');
   }
 
-  return Response.error();
+  return Response.error();*/
 });
