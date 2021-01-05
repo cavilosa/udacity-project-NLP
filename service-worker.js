@@ -15,11 +15,5 @@ setCatchHandler(async ({ event }) => {
         }
 
         return Response.error();
-    }/*
-  // Return the precached offline page if a document is being requested
-  if (event.request.destination === 'document') {
-    return matchPrecache('/offline.html');
-  }
-
-  return Response.error();*/
+    }
 });
