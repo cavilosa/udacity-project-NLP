@@ -11,9 +11,9 @@ export async function handleSubmit(event) {
         text = encodeURIComponent(text);
         console.log(text);
         // Sending input tp server
-        Client.postText("http://localhost:8081/text", text)
+        Client.postText("text", text)
         // Updating UI with data received from the API call
-        .then( Client.updateUI("http://localhost:8081/data") );
+        .then( Client.updateUI("/data") );
     } else {
         alert("Fill in the valid input, please!");
     }
