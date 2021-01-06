@@ -21,14 +21,14 @@ app.use(bodyParser.text());
 app.use(bodyParser.json());
 
 app.use(express.static("dist"));
-const port = 8081;
+const port = "https://www.korzhyk.ca";
 
 app.get("/", function(req, res){
     res.sendFile("dist/index.html")
 });
 
 const server = app.listen(port, function(){
-    console.log("server is runnig on port 8081");
+    console.log("server is runnig on korzhyk.ca");
 });
 
 let textapi = process.env.API_KEY;
