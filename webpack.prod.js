@@ -72,7 +72,6 @@ module.exports = {
             protectWebpackAssets: false
         }),
         new MiniCssExtractPlugin({ filename: "[name].css" }),
-        new WorkboxPlugin.GenerateSW(),
-        new webpack.EnvironmentPlugin(['NODE_ENV'])
+        new WorkboxPlugin.GenerateSW()
     ]
 }
