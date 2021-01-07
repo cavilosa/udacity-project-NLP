@@ -8,6 +8,8 @@ export async function handleSubmit(event) {
     console.log("::: Form Submitted :::");
 
     if (regex.test(text)) {
+        text = encodeURIComponent(text);
+        console.log(text);
         // Sending input tp server
         Client.postText("http://localhost:8081/text", text)
         // Updating UI with data received from the API call
