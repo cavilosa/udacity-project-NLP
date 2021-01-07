@@ -9,7 +9,6 @@ export async function handleSubmit(event) {
 
     if (regex.test(text)) {
         text = encodeURIComponent(text);
-        console.log(text);
         // Sending input tp server
         Client.postText("http://localhost:8081/text", text)
         // Updating UI with data received from the API call
@@ -21,7 +20,6 @@ export async function handleSubmit(event) {
 
 // Posting user input to server side code
 async function postText (url, data) {
-    console.log("post text is ran", url, data)
     const request = await fetch(url, {
         method: "POST",
         mode: "cors",
@@ -31,13 +29,11 @@ async function postText (url, data) {
         body: JSON.stringify({input:data})
     })
     try {
-        console.log(request)
         const data = await request.json();
         return data
     }catch(error){
         console.log(error)
     }
 }
-
 
 export { postText }

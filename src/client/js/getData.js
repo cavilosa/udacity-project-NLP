@@ -1,5 +1,4 @@
 async function updateUI (url) {
-    console.log("update UI is on")
     const request = await fetch (url); // Retreiving server side data form API call
     try {
         const data = await request.json();
