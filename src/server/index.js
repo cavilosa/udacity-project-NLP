@@ -11,7 +11,7 @@ const cors = require("cors");
 app.use(cors());
 
 app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*'); //
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', 'true');
     next();
 });
@@ -32,7 +32,6 @@ const server = app.listen(port, function(){
 });
 
 let textapi = process.env.API_KEY;
-
 
 let text =""; // A sting to fill in with the user input info
 

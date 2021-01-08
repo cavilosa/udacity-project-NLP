@@ -1,11 +1,9 @@
 export async function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
     // user input
-    let text = document.getElementById('name').value
+    let text = document.getElementById('name').value;
     // to check if the input spaces and tabs only
     let regex = new RegExp(/\S/);
-
-    console.log("::: Form Submitted :::");
 
     if (regex.test(text)) {
         text = encodeURIComponent(text);

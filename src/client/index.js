@@ -1,7 +1,7 @@
 import { handleSubmit } from "./js/app.js";
 import { postText } from "./js/app.js";
 import { updateUI } from "./js/getData.js";
-import logoIcon from "./images/logo.jpg"; // Logo from inages
+import logoIcon from "./images/logo.jpg"; // Logo from images
 
 
 var logo = document.querySelector("#logo"); // Find a place to insert the img
@@ -17,7 +17,7 @@ import "./styles/footer.scss";
 import { precacheAndRoute, matchPrecache } from 'workbox-precaching';
 import { setCatchHandler } from 'workbox-routing';
 
-console.log(process.env.NODE_ENV);
+
 if (process.env.NODE_ENV === "production") {
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {

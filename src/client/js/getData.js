@@ -3,7 +3,7 @@ async function updateUI (url) {
     try {
         const data = await request.json();
 
-        if (data.length != 0) { // Conat data contains all info from MeaningCloud
+        if (data.length != 0) { // Const data contains all info from MeaningCloud
             document.querySelector(".irony"). innerText = data.irony;
             document.querySelector(".subjectivity"). innerText = data.subjectivity;
             document.querySelector(".agreement"). innerText = data.agreement;
