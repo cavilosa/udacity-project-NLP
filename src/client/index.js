@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
     if ('serviceWorker' in navigator) {
     // Use the window load event to keep the page load performant
         window.addEventListener('load', () => {
-            console.log("Installing seervice workers in production")
+            console.log("Installing service workers in production")
             navigator.serviceWorker.register('./service-worker.js');
         });
     } else {
